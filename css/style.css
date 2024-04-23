@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
 * {
     padding: 0px;
     margin: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -15,7 +15,6 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     animation: carga 0.5s forwards;
-
 }
 
 ::-webkit-scrollbar {
@@ -35,7 +34,6 @@ body {
         background: white;
     }
 
-
     .black-light {
         position: fixed;
         border-radius: 50px;
@@ -47,7 +45,6 @@ body {
         right: 1%;
         top: 95%;
         transition: 1s;
-
 
         &.active1 {
             background: black;
@@ -68,8 +65,6 @@ body {
                 animation: btn-white 1s forwards;
             }
         }
-
-
     }
 
     .present {
@@ -111,35 +106,28 @@ body {
                     background: #ffffff;
                     margin: 0 4px;
                     border-radius: 50%;
-                    box-shadow: 0 0 0 10px #ffffffaa,
-                        0 0 50px #ffffff,
-                        0 0 100px #ffffff;
+                    box-shadow: 0 0 0 10px #ffffffaa, 0 0 50px #ffffff, 0 0 100px #ffffff;
                     animation: lum-blob 15s linear infinite;
                     animation-duration: calc(125s / var(--i));
                     transition: 0.5s;
 
                     &.active {
                         background: #000000;
-                        box-shadow: 0 0 0 10px #1f1f1faa,
-                            0 0 50px #1f1f1f,
+                        box-shadow: 0 0 0 10px #1f1f1faa, 0 0 50px #1f1f1f,
                             0 0 100px #1f1f1f;
                         transition: 0.5s;
                     }
 
                     &:nth-child(even) {
                         background: #3b3b3b;
-                        box-shadow: 0 0 0 10px #3b3a3a66,
-                            0 0 50px #3b3b3b,
+                        box-shadow: 0 0 0 10px #3b3a3a66, 0 0 50px #3b3b3b,
                             0 0 100px #3b3b3b;
-
-
                     }
                 }
             }
         }
 
         .images {
-
             margin: 0 10px 0 10px;
             position: absolute;
             height: 80%;
@@ -257,8 +245,6 @@ body {
             justify-content: center;
             align-items: center;
 
-
-
             .list-nav {
                 margin-top: 4%;
                 position: fixed;
@@ -320,18 +306,13 @@ body {
                     .select {
                         background: white;
                     }
-
-
                 }
 
                 a {
                     height: 80%;
                     text-decoration: none;
-
                 }
             }
-
-
 
             @media only screen and (max-width: 450px) {
                 .list-nav {
@@ -350,10 +331,7 @@ body {
                     margin-left: 15px;
                 }
             }
-
-
         }
-
 
         .body {
             height: 80%;
@@ -402,6 +380,7 @@ body {
                 }
 
                 @media only screen and (max-width: 420px) {
+
                     /* #inicio{
                         flex-direction: column;
                     } */
@@ -543,7 +522,6 @@ body {
                             transition: 0.5s;
                             flex-direction: column;
 
-
                             span {
                                 font-weight: bold;
                                 display: flex;
@@ -590,14 +568,14 @@ body {
                                             justify-content: center;
                                             align-items: center;
 
-                                            i{
+                                            i {
                                                 transform: scale(1.1);
                                             }
 
-                                            img{
+                                            img {
                                                 height: 15px;
                                                 width: 20px;
-                                                filter:saturate(0);
+                                                filter: saturate(0);
                                             }
 
                                             div {
@@ -655,13 +633,10 @@ body {
                                         }
                                     }
                                 }
-
                             }
                         }
                     }
-
                 }
-
 
                 @media only screen and (max-width: 400px) {
                     h1 {
@@ -674,10 +649,7 @@ body {
                         font-size: 5px;
                     }
                 }
-
-
             }
-
         }
 
         #proyectos {
@@ -720,12 +692,7 @@ body {
         justify-content: center;
         align-items: center;
     }
-
 }
-
-
-
-
 
 /* Animaciones */
 @keyframes carga {
@@ -738,7 +705,6 @@ body {
         background-color: #000000;
         opacity: 1;
     }
-
 }
 
 /* animación fondo Inicio */
