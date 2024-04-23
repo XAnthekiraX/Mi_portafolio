@@ -4,21 +4,18 @@
     padding: 0px;
     margin: 0px;
     font-family: 'Roboto', sans-serif;
-
-
 }
 
 html,
 body {
-    height: 99.5%;
+    height: auto;
     width: 99.5;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background: black;
     animation: carga 0.5s forwards;
-    
+
 }
 
 ::-webkit-scrollbar {
@@ -29,7 +26,7 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     flex-direction: column;
     background: black;
@@ -50,7 +47,7 @@ body {
         right: 1%;
         top: 95%;
         transition: 1s;
-        
+
 
         &.active1 {
             background: black;
@@ -142,6 +139,7 @@ body {
         }
 
         .images {
+
             margin: 0 10px 0 10px;
             position: absolute;
             height: 80%;
@@ -154,6 +152,8 @@ body {
             z-index: 1;
 
             div {
+                position: relative;
+                width: 80%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -236,78 +236,119 @@ body {
         height: 100%;
         width: 100%;
         z-index: 0;
-        display: flex;
         align-items: center;
         justify-content: start;
         flex-direction: column;
+        display: none;
 
-        &.active{
+        &.active {
             background: white;
         }
 
-        
+        &.active2 {
+            display: flex;
+        }
+
         .nav {
-            position: fixed;
-            height: 10%;
+            position: relative;
+            height: 20%;
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(10px);
-            background: transparent;
-            z-index: 1;
 
-            div {
+
+
+            .list-nav {
+                margin-top: 4%;
+                position: fixed;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                height: 100%;
-            }
+                height: 60px;
+                z-index: 1;
+                backdrop-filter: blur(10px);
+                background: transparent;
 
-            ul {
-                height: 100%;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-wrap: wrap;
-                list-style: none;
-            }
-
-            .nav-opt {
-                height: 100%;
-                width: 100px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                border-radius: 20px;
-                transition: 1s;
-
-
-                &:hover {
-                    transition: 1s;
-                    background: white;
-                    color: black;
+                ul {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    list-style: none;
                 }
 
-                &.active {
+                .nav-opt {
+                    height: 100%;
+                    width: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    border-radius: 20px;
                     transition: 1s;
-                    color: black;
+
+                    &.select {
+                        background: white;
+                        color: black;
+                    }
 
                     &:hover {
                         transition: 1s;
-                        background: black;
-                        color: white;
+                        background: white;
+                        color: black;
                     }
+
+                    &.active {
+                        transition: 1s;
+                        color: black;
+
+                        &:hover {
+                            transition: 1s;
+                            background: black;
+                            color: white;
+                        }
+
+                        &.select {
+                            background: black;
+                            color: white;
+                        }
+                    }
+
+                    .select {
+                        background: white;
+                    }
+
+
+                }
+
+                a {
+                    height: 80%;
+                    text-decoration: none;
+
                 }
             }
 
-            a {
-                height: 80%;
-                text-decoration: none;
 
+
+            @media only screen and (max-width: 450px) {
+                .list-nav {
+                    margin-top: 15%;
+                    width: 100%;
+                }
+
+                .nav-opt {
+                    margin-left: 0px;
+                    font-size: 15px;
+                }
+            }
+
+            @media only screen and (min-width: 400px) {
+                .nav-opt {
+                    margin-left: 15px;
+                }
             }
 
 
@@ -317,75 +358,374 @@ body {
         .body {
             height: 80%;
             width: 90%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
 
             #inicio {
-
-                &.active{
-                    margin-top: 5%;
-                height: 110%;
+                margin-top: 3%;
+                min-height: 700px;
+                max-height: auto;
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
+                color: white;
+                padding-top: 10px;
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    height: 50%;
+                    width: 80%;
                 }
-                
 
                 .img {
-
                     height: 400px;
                     width: 400px;
+                    filter: drop-shadow(1px 1px 10px white);
                 }
 
                 .text {
+                    flex-wrap: wrap;
                     font-size: 30px;
                     text-align: center;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: auto;
-                    width: 50%;
                     color: white;
 
                     &.active {
                         color: black;
                     }
                 }
-            }
-            #sobre-mi{
-                &.active{
-                    height: 120%;
-                width: 100%;
-                color: white;
+
+                @media only screen and (max-width: 420px) {
+                    /* #inicio{
+                        flex-direction: column;
+                    } */
+                    .img {
+                        height: 300px;
+                        width: 300px;
+                    }
+
+                    div {
+                        margin-top: 0%;
+                        width: 80%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 5px;
+                    }
+                }
+
+                @media only screen and (max-width: 800px) {
+                    div {
+                        flex-direction: column;
+                    }
+
+                    .text {
+                        margin-top: 10px;
+                        font-size: 20px;
+                        width: 80%;
+                    }
                 }
             }
 
-            #proyectos{
-                &.active{
-                    height: 120%;
+            #sobre-mi {
+                position: relative;
+                border: 1px solid red;
+                margin-top: 5%;
+                min-height: 700px;
+                max-height: auto;
                 width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
                 color: white;
+                flex-direction: column;
+
+                .text {
+                    width: 80%;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    h1 {
+                        width: 100%;
+                        border: 1px solid;
+                        border-color: transparent transparent white transparent;
+                        margin-bottom: 20px;
+
+                        &.active {
+                            border-color: transparent transparent black transparent;
+                        }
+                    }
+
+                    span {
+                        max-width: 50%;
+                        min-width: 90%;
+                        font-size: 20px;
+                    }
+
+                    &.active {
+                        color: black;
+                    }
                 }
+
+                .cards {
+                    position: relative;
+                    width: 90%;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+
+                    .about {
+                        font-weight: bold;
+                        text-align: center;
+                        width: 100px;
+                        background-color: white;
+                        color: black;
+                        border-radius: 50px;
+                        box-shadow: 0px 5px 0px 0px gray;
+                        padding: 15px;
+                        transition: 0.5s;
+                        z-index: 1;
+
+                        &.active {
+                            background: #c6c6c6;
+                            color: #000000;
+                            box-shadow: 0px 5px 0px 0px #272626;
+                        }
+
+                        &:hover {
+                            margin-top: 15px;
+                            transition: 0.5s;
+                            box-shadow: 0px 0px 0px 0px gray;
+                        }
+
+                        &.press {
+                            margin-top: 15px;
+                            transition: 0.5s;
+                            box-shadow: 0px 0px 0px 0px gray;
+                        }
+                    }
+
+                    .sp-card {
+                        height: auto;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: start;
+                        flex-wrap: wrap;
+                        overflow: hidden;
+
+                        .skill {
+                            height: auto;
+                            margin: 30px 0px 0px 0px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 1px solid green;
+                            text-align: center;
+                            min-width: 300px;
+                            max-width: 29%;
+                            color: white;
+                            padding: 15px;
+                            transition: 0.5s;
+                            flex-direction: column;
+
+
+                            span {
+                                font-weight: bold;
+                                display: flex;
+                                text-align: center;
+                                width: auto;
+                                background-color: white;
+                                color: black;
+                                border-radius: 50px;
+                                padding: 15px;
+                                z-index: 1;
+                                font-size: 15px;
+                            }
+
+                            .card {
+                                background: white;
+                                border-radius: 15px;
+                                color: black;
+                                margin-top: -30px;
+                                text-align: center;
+                                position: relative;
+                                display: flex;
+                                justify-content: start;
+                                align-self: start;
+                                border: 1px solid blue;
+                                height: auto;
+                                width: 90%;
+                                padding: 20px;
+
+                                ul {
+                                    list-style-type: none;
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+
+                                    li {
+                                        width: 100%;
+                                        margin-top: 10px;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+
+                                        .lvl-skill {
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+
+                                            i{
+                                                transform: scale(1.1);
+                                            }
+
+                                            img{
+                                                height: 15px;
+                                                width: 20px;
+                                                filter:saturate(0);
+                                            }
+
+                                            div {
+                                                border-radius: 50px;
+                                                margin-left: 5px;
+                                                height: 5px;
+                                                width: 40px;
+                                                border: 1px solid black;
+                                            }
+                                        }
+
+                                        .skill-lv1 {
+                                            div {
+                                                border-radius: 50px;
+                                                margin-left: 5px;
+                                                height: 5px;
+                                                width: 40px;
+                                                border: 1px solid black;
+                                            }
+
+                                            div:nth-child(1) {
+                                                background: black;
+                                            }
+                                        }
+
+                                        .skill-lv2 {
+                                            div {
+                                                border-radius: 50px;
+                                                margin-left: 5px;
+                                                height: 5px;
+                                                width: 40px;
+                                                border: 1px solid black;
+                                            }
+
+                                            div:nth-child(1),
+                                            :nth-child(2) {
+                                                background: black;
+                                            }
+                                        }
+
+                                        .skill-lv3 {
+                                            div {
+                                                border-radius: 50px;
+                                                margin-left: 5px;
+                                                height: 5px;
+                                                width: 40px;
+                                                border: 1px solid black;
+                                            }
+
+                                            div:nth-child(1),
+                                            :nth-child(2),
+                                            :nth-child(3) {
+                                                background: black;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+
+
+                @media only screen and (max-width: 400px) {
+                    h1 {
+                        width: 100%;
+                    }
+
+                    span {
+                        margin-top: 0%;
+                        width: 100%;
+                        font-size: 5px;
+                    }
+                }
+
+
             }
-            #contacto{
-                &.active{
-                    height: 120%;
-                width: 100%;
-                color: white;
-                }
+
+        }
+
+        #proyectos {
+            margin-top: 5%;
+            min-height: 700px;
+            max-height: auto;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+            &.active {
+                color: black;
             }
         }
 
-        .footer {
-            height: 20%;
+        #contacto {
+            margin-top: 5%;
+            min-height: 700px;
+            max-height: auto;
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            color: white;
+
+            &.active {
+                color: black;
+            }
         }
     }
 
+    .footer {
+        height: 20%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
+
+
+
+
 
 /* Animaciones */
 @keyframes carga {
@@ -445,9 +785,6 @@ body {
 
     100% {
         top: -100%;
+        opacity: 0;
     }
 }
-
-
-
-/* responsive */
