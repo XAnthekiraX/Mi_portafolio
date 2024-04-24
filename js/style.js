@@ -30,6 +30,15 @@ $('.black-light').bind('click', function() {
     $('#proyectos').toggleClass('active');
     $('#contacto').toggleClass('active');
     $('.about').toggleClass('active');
+    $('.card').toggleClass('active');
+    $('.txt-skill').toggleClass('active');
+    $('.skill-lv1').toggleClass('active');
+    $('.skill-lv2').toggleClass('active');
+    $('.skill-lv3').toggleClass('active');
+    $('.blur-wt').toggleClass('active');
+    $('.project').toggleClass('active');
+    $('.pj-txt').toggleClass('active');
+    $('.icons').toggleClass('active');
 });
 
 //boton de empezar
@@ -71,8 +80,23 @@ $('#inicio, #sobre-mi, #proyectos, #contacto').on('mouseenter', function() {
     }
 });
 
-$('.about').on('click', function() {
+$('.about').bind('click', function() {
     $('.about').toggleClass('press');
+    $('.skill').toggleClass('about-more');
+});
+
+$('.hover').on('mouseenter', function() {
+    $('.pj-txt').addClass('ani');
+    $('.icons').addClass('ani');
+    $('.blur-bl').addClass('active');
+    $('.blur-wt').addClass('blur');
+});
+
+$('.hover').on('mouseleave', function() {
+    $('.pj-txt').removeClass('ani');
+    $('.icons').removeClass('ani');
+    $('.blur-bl').removeClass('active');
+    $('.blur-wt').removeClass('blur');
 });
 
 
