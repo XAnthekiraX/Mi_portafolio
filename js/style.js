@@ -39,6 +39,8 @@ $('.black-light').bind('click', function() {
     $('.project').toggleClass('active');
     $('.pj-txt').toggleClass('active');
     $('.icons').toggleClass('active');
+    $('.ico svg').toggleClass('active');
+    $('.ico li').toggleClass('active');
 });
 
 //boton de empezar
