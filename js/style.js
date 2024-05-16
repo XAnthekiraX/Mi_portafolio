@@ -6,13 +6,15 @@ spans.forEach(function(span) {
     span.style.setProperty('--i', randomNumber);
 });
 
-var nav = document.querySelectorAll('.nav-opt');
+// Seleccionar todos los elementos con la clase .line
+var nav = document.querySelectorAll('.line');
 
 // Iterar sobre cada elemento .line
 for (var i = 0; i < nav.length; i++) {
     // Agregar una clase dinámica con el índice aumentado en 1
-    nav[i].className.add('.opt' + (i + 1));
+    nav[i].classList.add('opt' + (i + 1));
 }
+
 
 //boton para cambiar de banco a negro
 $('.black-light').bind('click', function() {
