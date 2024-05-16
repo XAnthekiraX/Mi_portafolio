@@ -11,7 +11,7 @@ var nav = document.querySelectorAll('.nav-opt');
 // Iterar sobre cada elemento .line
 for (var i = 0; i < nav.length; i++) {
     // Agregar una clase dinámica con el índice aumentado en 1
-    nav[i].classList.add('opt' + (i + 1));
+    nav[i].className.add('.opt' + (i + 1));
 }
 
 //boton para cambiar de banco a negro
